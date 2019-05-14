@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/mainFragment">
+
+    <fragment android:id="@+id/mainFragment"
+              android:name="thiagocury.eti.br.exnavigationcontroller.MainFragment"
+              android:label="main_fragment"
+              tools:layout="@layout/main_fragment">
+
+        <action android:id="@+id/action_mainFragment_to_screen1"
+                app:destination="@id/screen1" app:enterAnim="@anim/translate_in_up"
+                app:exitAnim="@anim/translate_out_up" app:popEnterAnim="@anim/translate_in_down"
+                app:popExitAnim="@anim/translate_out_down"/>
+
+        <action android:id="@+id/action_mainFragment_to_screen22"
+                app:destination="@id/screen2"/>
+    </fragment>
+
+    <fragment android:id="@+id/screen1"
+              android:name="thiagocury.eti.br.exnavigationcontroller.Screen1"
+              android:label="Screen1">
+        <action android:id="@+id/action_screen1_to_finalScreen" app:destination="@id/finalScreen"
+                app:enterAnim="@anim/translate_in_up" app:popEnterAnim="@anim/translate_in_down"
+                app:exitAnim="@anim/translate_out_up" app:popExitAnim="@anim/translate_out_down"/>
+    </fragment>
+
+    <fragment android:id="@+id/screen2"
+              android:name="thiagocury.eti.br.exnavigationcontroller.Screen2"
+              android:label="Screen2">
+        <action android:id="@+id/action_screen2_to_finalScreen" app:destination="@id/finalScreen"/>
+    </fragment>
+    <fragment android:id="@+id/finalScreen" android:name="thiagocury.eti.br.exnavigationcontroller.FinalScreen"
+              android:label="final_screen" tools:layout="@layout/final_screen">
+        <argument android:name="text" app:argType="string" android:defaultValue="Texto não enviado..."/>
+    </fragment>
+</navigation>
